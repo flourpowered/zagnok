@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    restart: always
+    container_name: zagnok-web
+    volumes:
+      - ./src:/root/zagnok/src
+    ports:
+      - "8000:8080"
+    command: node index.js
+    environment:
+      DB_USERNAME: root
+      DB_PASSWORD: example
+  
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    restart: always
+    container_name: zagnok-db
+    volumes:
+      - /data/db:/root/zagnok/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: zagnok
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example

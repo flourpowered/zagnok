@@ -1,0 +1,19 @@
+FROM node:14.7.0-stretch
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+# For dev
+RUN npm install
+
+# For prod
+# RUN npm ci
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 8080
+
+USER node

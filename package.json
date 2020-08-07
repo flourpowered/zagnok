@@ -1,0 +1,42 @@
+{
+  "name": "zagnok",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc -d --strict --sourceMap",
+    "build-prod": "npx tsc -d --strict --removeComments",
+    "test": "test",
+    "start": "npm run build && docker-compose up --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flourpowered/zagnok.git"
+  },
+  "author": "William Grootonk <wgrootonk+git@gmail.com>",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/flourpowered/zagnok/issues"
+  },
+  "homepage": "https://github.com/flourpowered/zagnok#readme",
+  "dependencies": {
+    "@types/mongoose": "^5.7.35",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^9.1.0",
+    "mongoose": "^5.9.27",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "nodemon": "^2.0.4"
+  }
+}
